@@ -1,10 +1,12 @@
 
-# Ex.No: 07                                       AUTO REGRESSIVE MODEL
+
 
 
 ### Name: Koduru Sanath Kumar Reddy
 ### Register no:212221240024
 ### Date:
+
+# Ex.No: 07                                       AUTO REGRESSIVE MODEL
 
 
 
