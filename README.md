@@ -84,13 +84,14 @@ print(f'Mean Squared Error: {mse}')
 ### OUTPUT:
 
 GIVEN DATA
-<img width="971" alt="image" src="https://github.com/user-attachments/assets/49372e7f-7f0c-4a39-a102-dd4f8dedea40">
+
 
 <img width="680" alt="image" src="https://github.com/user-attachments/assets/aab51f8d-becc-4cf5-bc7e-07586f96524d">
 
 PACF - ACF
 
 <img width="971" alt="image" src="https://github.com/user-attachments/assets/bf13d05a-e7c4-4547-8475-469d2a7b66de">
+<img width="971" alt="image" src="https://github.com/user-attachments/assets/49372e7f-7f0c-4a39-a102-dd4f8dedea40">
 
 
 PREDICTION
