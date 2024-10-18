@@ -91,13 +91,20 @@ GIVEN DATA
 PACF - ACF
 
 <img width="971" alt="image" src="https://github.com/user-attachments/assets/bf13d05a-e7c4-4547-8475-469d2a7b66de">
+
 <img width="971" alt="image" src="https://github.com/user-attachments/assets/49372e7f-7f0c-4a39-a102-dd4f8dedea40">
 
 
 PREDICTION
 
+<img width="738" alt="image" src="https://github.com/user-attachments/assets/53d3ae1d-b368-466b-a324-2dbda03d42d6">
+
+
 
 FINIAL PREDICTION
+
+<img width="738" alt="image" src="https://github.com/user-attachments/assets/8687a879-32a5-4020-a2ee-32ff41e51829">
+
 
 
 
