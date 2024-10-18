@@ -1,5 +1,10 @@
+
 # Ex.No: 07                                       AUTO REGRESSIVE MODEL
-### Date: 
+
+
+### Name: Koduru Sanath Kumar Reddy
+### Register no:212221240024
+### Date:
 
 
 
@@ -14,16 +19,84 @@ To Implementat an Auto Regressive Model using Python
 6. Make predictions using the AR model.Compare the predictions with the test data
 7. Calculate Mean Squared Error (MSE).Plot the test data and predictions.
 ### PROGRAM
+~~~
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from statsmodels.tsa.ar_model import AutoReg
+from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
+from statsmodels.tsa.stattools import adfuller
+from sklearn.metrics import mean_squared_error
+
+
+data = pd.read_csv('Electric_Production.csv', parse_dates=['DATE'], index_col='DATE')
+
+
+plt.figure(figsize=(10, 6))
+plt.plot(data, label='Electric Production')
+plt.title('Given Electric Production Data')
+plt.xlabel('Date')
+plt.ylabel('Production')
+plt.legend()
+plt.show()
+
+
+adf_result = adfuller(data)
+print(f'ADF Statistic: {adf_result[0]}')
+print(f'p-value: {adf_result[1]}')
+
+
+train_size = int(len(data) * 0.8)
+train, test = data.iloc[:train_size], data.iloc[train_size:]
+
+
+lag_order = 13
+model = AutoReg(train, lags=lag_order)
+model_fitted = model.fit()
+
+
+plt.figure(figsize=(12, 8))
+plt.subplot(211)
+plot_acf(data, lags=40, ax=plt.gca())
+plt.title('Autocorrelation Function (ACF)')
+
+
+plt.subplot(212)
+plot_pacf(data, lags=40, ax=plt.gca())
+plt.title('Partial Autocorrelation Function (PACF)')
+plt.tight_layout()
+plt.show()
+
+predictions = model_fitted.predict(start=len(train), end=len(train) + len(test) - 1, dynamic=False)
+plt.figure(figsize=(10, 6))
+plt.plot(test.index, test, label='Actual Test Data', color='blue')
+plt.plot(test.index, predictions, label='Predicted Data', color='red')
+plt.title('Test Data vs Predictions')
+plt.xlabel('Date')
+plt.ylabel('Electric Production')
+plt.legend()
+plt.show()
+mse = mean_squared_error(test, predictions)
+print(f'Mean Squared Error: {mse}')
+~~~
 ### OUTPUT:
 
 GIVEN DATA
+<img width="971" alt="image" src="https://github.com/user-attachments/assets/49372e7f-7f0c-4a39-a102-dd4f8dedea40">
+
+<img width="680" alt="image" src="https://github.com/user-attachments/assets/aab51f8d-becc-4cf5-bc7e-07586f96524d">
 
 PACF - ACF
+
+<img width="971" alt="image" src="https://github.com/user-attachments/assets/bf13d05a-e7c4-4547-8475-469d2a7b66de">
 
 
 PREDICTION
 
+
 FINIAL PREDICTION
+
+
 
 ### RESULT:
 Thus we have successfully implemented the auto regression function using python.
