@@ -80,6 +80,8 @@ plt.legend()
 plt.show()
 mse = mean_squared_error(test, predictions)
 print(f'Mean Squared Error: {mse}')
+final_prediction = model_fitted.predict(start=len(data), end=len(data))
+print(f"Final prediction for the next time period: {final_prediction[0]}")
 ~~~
 ### OUTPUT:
 
